@@ -175,7 +175,7 @@ const PinkPassport = () => {
 <div className='relative'>
   <img src="/mesut-kaya-bCwgFb-llPs-unsplash.jpg" alt="" className='h-[800px] w-full' />
   <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-gradient-to-br z-0 from-white via-transparent to-black opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-br z-0 from-white via-transparent to-black opacity-10" />
                     {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black" /> */}
                     <div className="absolute inset-0 bg-gradient-to-br from-sky-700 to-black opacity-20" />
                 </div>
@@ -185,7 +185,7 @@ const PinkPassport = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-black flex justify-center flex-col text-left font-bold space-y-5 pl-10 lg:text-8xl py-5">
+          <div className="text-white flex justify-center flex-col text-left font-bold space-y-5 pl-10 lg:text-8xl py-5">
             <h1 className='text-6xl'>Travel in Confidence</h1>
             <h1 className='text-6xl'>Travel Designed for <span className='text-pink-500'>Women</span></h1>
           </div>
