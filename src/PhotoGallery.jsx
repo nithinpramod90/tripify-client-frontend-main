@@ -9,26 +9,12 @@ import { useNavigate } from 'react-router-dom';
 const PhotoGallery = () => {
 
   const [ImageData, setImageData] = useState([])
+  const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate()
 
   useEffect(() => {
     fetchPhotos()
   }, [])
-
-  const photos = [
-    { src: 'https://images.unsplash.com/photo-1542044896530-05d85be9b11a?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'France' },
-    { src: 'https://plus.unsplash.com/premium_photo-1661963476845-78adb576dcbe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Portugal' },
-    { src: 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'City' },
-    { src: 'https://plus.unsplash.com/premium_photo-1683408267588-ebc95a4cf9a8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Forest' },
-    { src: 'https://images.unsplash.com/photo-1556609894-0ae309cb8354?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://plus.unsplash.com/premium_photo-1676139860147-0305ab85bdca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://images.unsplash.com/photo-1613356522023-e95206f99214?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://plus.unsplash.com/premium_photo-1680102981920-cbdc911b7556?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://images.unsplash.com/photo-1544002177-fce4696659d8?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://images.unsplash.com/photo-1612769254949-deb42c1fbbf7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://images.unsplash.com/photo-1541438633571-9578b70ae5bf?q=80&w=1900&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-    { src: 'https://images.unsplash.com/photo-1583364481915-dacea3e06d18?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Lake' },
-  ];
 
   const getPhotoColumns = (photos, numCols) => {
     const columns = Array.from({ length: numCols }, () => []);
@@ -49,10 +35,19 @@ const PhotoGallery = () => {
     }
   }
 
+
+  const openModal = (photo) => {
+    setSelectedImage(photo);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   const columns = getPhotoColumns(ImageData, 4);
   
   return (
-    <div className=" mx-auto p-4 bg-gray-300">
+    <div className=" mx-auto p-4 bg-white">
       <div
                 className="cursor-pointer absolute top-0 left-0 px-10 py-5 "
                 onClick={() => navigate('/')}
@@ -64,7 +59,7 @@ const PhotoGallery = () => {
                 />
                 <p className='md:text-sm font-bold py-2 text-xs'>By QATAYWORLD PVT LTD</p>
             </div>
-                           <Navigator/>
+                           <Navigator text={'text-black'} icone={'text-black'} bg={'bg-white/30'}/>
       <WavyText
         word="Travel Gallery"
         className="text-4xl font-bold text-black mb-10"
@@ -81,6 +76,7 @@ const PhotoGallery = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
+                onClick={() => openModal(photo)}
               >
                 <img
                   src={photo.src}
@@ -95,6 +91,34 @@ const PhotoGallery = () => {
           </div>
         ))}
       </div>
+      {selectedImage && (
+        <div
+          className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50"
+          onClick={closeModal}
+        >
+          <motion.div
+            className="max-w-3/4 md:max-w-3xl max-h-3/4 md:max-h-3/4 overflow-hidden bg-white rounded-lg shadow-lg"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            onClick={(e) => e.stopPropagation()} // Prevent modal closing when clicking inside the modal
+          >
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.caption}
+              className="object-contain w-full h-full"
+            />
+            <div className="absolute top-0 right-0 p-2">
+              <button
+                className="text-white bg-black rounded-full p-2"
+                onClick={closeModal}
+              >
+                Close
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
     </div>
   );
 };

@@ -1,16 +1,17 @@
-import React from 'react';
-import { format } from 'date-fns';
-import './styles.css'
+import React from "react";
+import { format } from "date-fns";
+import "./styles.css";
 const BlogPhase = ({ blog, index }) => {
-
   return (
-    <div className="my-8 p-4 md:p-6 ">
+    <div className="my-8  md:p-6 ">
       <div className="relative mb-6 group">
-        {index > 0 && <div className="py-5">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight transition duration-500 ease-in-out hover:text-gray-700 hover:shadow-lg">
-            {blog.header}
-          </h1>
-        </div>}
+        {index > 0 && (
+          <div className="py-5">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight transition duration-500 ease-in-out hover:text-gray-700 hover:shadow-lg">
+              {blog.header}
+            </h1>
+          </div>
+        )}
         <img
           src={blog.image}
           alt={blog.imageCaption}
@@ -28,7 +29,7 @@ const BlogPhase = ({ blog, index }) => {
         </p>
       </div>
       <div className="px-4 py-6">
-        { blog.sections.map((section, index) => (
+        {blog.sections.map((section, index) => (
           <div key={index} className="mb-8 ">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-2 text-gray-800">
               {section.subHeader}
@@ -41,7 +42,6 @@ const BlogPhase = ({ blog, index }) => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };

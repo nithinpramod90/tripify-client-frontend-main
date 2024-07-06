@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from './Axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 const EnquiryForm2 = () => {
   const [formData, setFormData] = useState({
@@ -20,9 +21,9 @@ const EnquiryForm2 = () => {
 
     try {
       const response = await api.post('/enquiry', formData);
-      if (response.status === 200) {
+      if (response.status === 201) {
         // You can add any success message or actions here
-        alert('Enquiry submitted successfully!');
+        toast.success('Enquiry Successfully Submited')
       }
     } catch (error) {
       console.log(`Error on enquiry submission: ${error}`);
@@ -76,6 +77,7 @@ const EnquiryForm2 = () => {
           <button type="button" className='bg-black text-white w-1/2 py-2 px-5 rounded-md' onClick={redirectToWhatsApp}>Redirect to whatsapp</button>
         </div>
       </form>
+      <Toaster/>
     </div>
   );
 };

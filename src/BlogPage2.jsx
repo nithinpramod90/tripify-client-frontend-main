@@ -58,7 +58,7 @@ const BlogPage2 = () => {
 
 
         <div className="flex flex-col md:flex-row  gap-8 relative h-screen  bg-gray-200 z-0 ">
-                     <Navigator/>
+                     <Navigator text={'text-black'} icone={'text-black'}/>
             <div className='opacity-25 -z-0'>
                 <DotPattern width={16} height={16} cx={2} cy={2} cr={2} />
             </div>
@@ -137,7 +137,7 @@ const BlogPage2 = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <WavyText
-                            word="Related Blogs"
+                            word="Blogs"
                             className="text-2xl font-bold text-black "
                         />
                         <div className="p-4 md:grid md:grid-cols-3 gap-5">

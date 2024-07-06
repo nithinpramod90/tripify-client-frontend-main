@@ -122,6 +122,8 @@ const Destinations = () => {
         ]
     };
 
+  
+
     return (
         <div className="h-full my-16 ">
             <div className="w-full flex-vertical space-y-10">

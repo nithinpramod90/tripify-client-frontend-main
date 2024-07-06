@@ -5,20 +5,25 @@ import Navigator from './Navigator';
 
 const About = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate()  
 
 
   return (
-    <div className="min-h-screen relative bg-cover bg-center flex items-center bg-gray-500 justify-center py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundImage: 'url(/path/to/your/background-image.jpg)' }}>
-         <Navigator/>
-     <div className='cursor-pointer absolute top-0 left-0 p-10' onClick={() => navigate('/')}>
+    <div className=" relative bg-white/10  ">
+         <Navigator text={'text-black'} />
+     <div className='cursor-pointer absolute top-0 left-0 p-10 z-10' onClick={() => navigate('/')}>
         <img src="/TRIP999Artboard 1@4x (1).png" alt="" className='w-20' />
       </div>
-      <div className="bg-white bg-opacity-90 max-w-4xl w-full space-y-8 p-10 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105">
-        <h1 className="text-4xl font-extrabold text-center text-blue-600 mb-4 animate-fade-in-up">
-          Welcome to Tripifyme
-        </h1>
-        <p className="text-lg text-gray-700 animate-fade-in-up delay-100">
+      <div className="h-fit w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-900 ">
+        <img src="/3d-rendering-cartoon-business-men-removebg-preview.png" alt="" className="w-80 ml-10" />
+          <div className='md:absolute md:top-[25%] md:right-[35%] md:pb-0 pb-10'>
+            <h1 className="md:text-6xl text-3xl font-extrabold text-center text-white  animate-fade-in-up">
+              Welcome to Tripifyme
+            </h1>
+          </div>
+      </div>
+      <div className=" w-full space-y-8 md:p-20 p-8 font-bold">
+        <p className="text-lg f text-gray-700 animate-fade-in-up delay-100">
           <FaSuitcase className="inline-block text-blue-600 mr-2" />
           We are very excited to introduce Tripifyme as the one-stop provider for all travel needs and requirements. We label ourselves as leading, innovative, and highly efficient and look forward to demonstrating these qualities at the earliest possible chance.
         </p>

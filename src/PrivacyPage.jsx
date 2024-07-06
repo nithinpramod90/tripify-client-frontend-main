@@ -7,33 +7,38 @@ const PrivacyPage = () => {
 
     return (
         <motion.div
-            className="bg-gray-100 min-h-screen py-12 px-10 space-y-8 text-lg"
+            className="bg-gray-100 min-h-screen  space-y-8 text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
+             <div className="h-fit w-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-900 ">
+                <img src="/parents-with-children-using-content-control-software-parental-control-software-restricted-access-children-media-content-limitations-concept-bright-vibrant-violet-isolated-illustration.png" alt="" className="md:w-3/12 md:ml-32" />
+                <div className='md:absolute md:top-[25%] md:right-[25%] md:pb-0 pb-10'>
+                <motion.h2
+                        className="font-bold text-white md:text-5xl text-center"
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                        Privacy Policy - QatayWorld Pvt Ltd.
+                    </motion.h2>
+                </div>
+             </div>
             <div
-                className="cursor-pointer absolute top-0 left-0 px-10 py-5"
+                className="cursor-pointer absolute top-0 left-0 px-2 "
                 onClick={() => navigate('/')}
             >
                 <img
                     src="/TRIP999Artboard 1@4x (1).png"
                     alt="TRIPIFYME Logo"
-                    className="w-20"
+                    className="w-16"
                 />
-                <p className='text-sm font-bold py-2'>By QATAYWORLD PVT LTD</p>
+                <p className='text-xs font-bold py-2'>By QATAYWORLD PVT LTD</p>
             </div>
-            <motion.h2
-                className="font-bold text-3xl"
-                initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-            >
-                Privacy Policy - QatayWorld Pvt Ltd.
-            </motion.h2>
 
             <motion.div
-                className="space-y-6"
+                className="space-y-6 py-12 px-10" 
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navigator from './Navigator';
 
 const YOUTUBE_API_KEY = 'AIzaSyBzvlw8zHw8Q8KmVpeWaW_iB0pRaRaHQg0';
 const CHANNEL_ID = 'UC2ysr_lTuaAwYyVF0yCn8mw';
@@ -56,6 +57,7 @@ const VideoGallery = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 md:mt-0 mt-10">
+       <Navigator text={'text-black'} icone={'text-black'}/>
          <div
                 className="cursor-pointer absolute top-0 left-0 px-10 py-5 "
                 onClick={() => navigate('/')}

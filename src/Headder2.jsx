@@ -51,15 +51,15 @@ const Header2 = () => {
                         <div className='flex flex-col gap-8 md:gap-16  '>
                             <div className={`pt-12 md:pt-28 flex flex-col items-center md:items-start ${isVisible ? 'text-fade-in' : ''}`}>
                                 <div className='text-center md:text-left  w-screen md:w-full '>
-                                    <p className="md:text-2xl text-1xl font-bold uppercase  text-white  mb-4 ">
-                                        <span>Desigining your</span>
-                                        <span>Dream, one Trip </span>
-                                        <span >At a Time</span>
-                                    </p>
-                                    <p className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#ffa500] leading-tight">
+                                    <p className="text-4xl md:text-5xl mb-4 lg:text-7xl font-bold text-[#ffa500] leading-tight">
                                         <span className='text-white'>Book</span> <span className=' custom-line-through text-white'>a Trip</span>
                                         <br />
                                         <span className='md:pl-48'>an Experience</span>
+                                    </p>
+                                    <p className="md:text-2xl text-1xl font-bold uppercase  text-white   ">
+                                        <span>Desigining your </span>
+                                        <span>Dream, one Trip </span>
+                                        <span >At a Time</span>
                                     </p>
                                 </div>
                             </div>

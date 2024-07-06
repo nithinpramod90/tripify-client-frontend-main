@@ -143,7 +143,7 @@ const PinkPassport = () => {
 
   return (
     <div className=" w-full md:mx-auto border">
-       <Navigator/>
+       <Navigator text={'text-black'} icone={'text-black'}/>
       <div
         className="fixed top-3/4 md:top-24 lg:top-3/4 md:left-[95%] left-[90%] transform -translate-x-1/2 mt-4 px-6 py-3 bg-green-500 text-white rounded-full shadow-lg cursor-pointer flex items-center space-x-2 z-50"
         onClick={handleWhatsAppClick}
@@ -172,8 +172,31 @@ const PinkPassport = () => {
           </button>
         </motion.div>
       </header>
-
-      <div className="md:flex mt-10">
+<div className='relative'>
+  <img src="/mesut-kaya-bCwgFb-llPs-unsplash.jpg" alt="" className='h-[800px] w-full' />
+  <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-gradient-to-br z-0 from-white via-transparent to-black opacity-50" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black" /> */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-sky-700 to-black opacity-20" />
+                </div>
+                <motion.div
+          className="md:w-7/12 p-5 absolute top-48 flex flex-col justify-center gap-10 py-10 "
+          initial={{ x: '-100%' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="text-black flex justify-center flex-col text-left font-bold space-y-5 pl-10 lg:text-8xl py-5">
+            <h1 className='text-6xl'>Travel in Confidence</h1>
+            <h1 className='text-6xl'>Travel Designed for <span className='text-pink-500'>Women</span></h1>
+          </div>
+          <div className="py-5 pl-10">
+            <button type="submit" className="bg-black  text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300">
+              Book Now
+            </button>
+          </div>
+        </motion.div>
+</div>
+      {/* <div className="md:flex mt-10">
         <motion.div
           className="md:w-7/12 p-5 flex flex-col justify-center gap-10 py-10 "
           initial={{ x: '-100%' }}
@@ -202,7 +225,7 @@ const PinkPassport = () => {
             className="w-6/12 "
           />
         </motion.div>
-      </div>
+      </div> */}
 
       <div className="md:flex mt-10 p-5 border-b-2 mb-10">
         <motion.div
@@ -242,7 +265,7 @@ const PinkPassport = () => {
         </motion.div>
       </div>
 
-      <div className="py-14">
+      {/* <div className="py-14">
         <motion.div
           className="mb-4 flex flex-col items-center py-10"
           initial={{ opacity: 0 }}
@@ -265,7 +288,7 @@ const PinkPassport = () => {
             <GoogleReviewsCard key={review.id} review={review} isCenter={!isMobile && index === 1} />
           ))}
         </motion.div>
-      </div>
+      </div> */}
       <Blog male={false} />
       <div className="bg-pink-300 md:flex p-5 ">
         <motion.div

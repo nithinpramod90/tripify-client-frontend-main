@@ -3,6 +3,14 @@ import React from 'react';
 const PackageCard = ({ packageInfo }) => {
     const { image, duration, price, description, country } = packageInfo;
 
+    const redirectToWhatsApp = () => {
+        const phoneNumber = '9072121217';
+    
+        const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    
+        window.open(whatsappUrl, '_blank');
+      }
+
     return (
         <div className="border rounded-lg shadow-lg sm:w-[calc(50%-1rem)] md:w-11/12 md:w-shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl mx-auto mb-6">
             <div className="relative">
@@ -40,7 +48,7 @@ const PackageCard = ({ packageInfo }) => {
                         </svg>
                         <p className="text-sm sm:text-lg font-medium text-gray-700 ml-2">{country}</p>
                     </div>
-                    <p className="text-sm sm:text-lg font-medium text-blue-500 cursor-pointer">Know More</p>
+                    <p className="text-sm sm:text-lg font-medium text-blue-500 cursor-pointer" onClick={redirectToWhatsApp}>Know More</p>
                 </div>
             </div>
         </div>

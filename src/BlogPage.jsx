@@ -65,7 +65,7 @@ const BlogPage = () => {
 
 
     <div ref={TopRef} className="flex flex-col md:flex-row  gap-8 relative h-screen  bg-gray-200 z-0 ">
-                           <Navigator/>
+                           <Navigator text={'text-black'} icone={'text-black'} />
       <div className='opacity-25 -z-0'>
         <DotPattern width={16} height={16} cx={2} cy={2} cr={2} />
       </div>
@@ -95,7 +95,7 @@ const BlogPage = () => {
           </motion.div>
         </div>
 
-        <div className='md:flex gap-8 md:px-10 px-4 m-3'>
+        <div className='md:flex gap-8 md:px-10 m-3'>
 
           <div onClick={() => { Navigate('/') }} className='absolute top-0 '>
             <img src="/TRIP999Artboard 1@4x (1) (Copy).png" alt="" className='w-28 pt-5  cursor-pointer' />
@@ -107,7 +107,7 @@ const BlogPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className=" py-8">
+            <div className=" py-8 ">
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-500 mb-6">{blog.blogs[0].header}</h2>
             </div>
             <motion.div

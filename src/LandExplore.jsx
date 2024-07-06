@@ -12,14 +12,14 @@ const LandExplore = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="mx-auto px-36 py-8 bg-gray-500">
-      <Navigator/>
+    <div className="mx-auto px-36 py-8 bg-white/10">
+      <Navigator text={'text-black'} icone={'text-black'}/>
       <div className='cursor-pointer' onClick={() => navigate('/')}>
         <img src="/TRIP999Artboard 1@4x (1).png" alt="" className='w-20' />
       </div>
       {/* Header Section */}
       <motion.div
-        className="text-center mb-8 text-white"
+        className="text-center mb-8 text-black"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

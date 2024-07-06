@@ -22,7 +22,7 @@ const CorporateTravelPage = () => {
 
   return (
     <div className="w-full mx-auto p-10">
-      <Navigator/>
+      <Navigator text={'text-black'} icone={'text-black'}/>
       <header className="flex justify-between items-center py-4">
         <motion.div
           initial={{ opacity: 0, x: -100 }}

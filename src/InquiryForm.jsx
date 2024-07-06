@@ -137,7 +137,7 @@ const InquiryForm = () => {
               </div>
             </div>
           </div>
-          <div className="text-center flex gap-5 justify-center px-4">
+          <div className="text-center flex gap-5 justify-center text-sm md:px-4">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
